@@ -9,7 +9,7 @@
     $pathPrincipal=$_SERVER["DOCUMENT_ROOT"];
     $pathApp=$_SERVER["PHP_SELF"];
     $configGral=array();
-
+    $configGral["nombre"]["sistema"] = "Control de Empleados";
     $configGral["bd"]["host"] = "localhost";
     $configGral["bd"]["usuario"] = "root";
     $configGral["bd"]["password"] = "xampp";
