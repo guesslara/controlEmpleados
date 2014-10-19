@@ -1,0 +1,12 @@
+body{margin:0;font-family: Verdana; }
+/*login*/
+#contenedorLogin{border:1px solid #CCC;position:absolute;left:50%;top:50%;width:400px;height:327px;margin-left:-200px;margin-top:-163.5px;background:#FFF;}
+.bienvenido{border:1px solid #CCC;background:#F0F0F0;text-align:center;padding:5px;}
+.datosUsuario{border:0px solid #FF0000;height:228px;padding:10px;}
+.usuario{border:0px solid #FF0000;text-align:center;font-size:16px;margin-top: 40px;}
+.password{border:0px solid #FF0000;text-align:center;font-size:16px;margin-top: 15px;}
+.cajasLogin{margin-left:35px;}
+.cajaPassword{margin-left:35px;}
+.btnLogin{border:1px solid #CCC;background:#FFF;text-align:right;padding:5px;}
+/**/
+.error{font-size:16px;background:#F78181;color:#B40404;font-weight:bold;padding:10px;text-align:center;}
