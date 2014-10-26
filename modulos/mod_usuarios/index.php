@@ -13,7 +13,7 @@
 	mysql_connect($configGral["bd"]["host"],$configGral["bd"]["usuario"],$configGral["bd"]["password"]);
 	mysql_select_db($configGral["bd"]["base"]);
 
-	$sql="SELECT id,activo,usuario,contrasena,nombre_completo,nivel_acceso,obs FROM cat_usuarios where id not in(1)";
+	$sql="SELECT activo,usuario,nombre_completo,nivel_acceso,obs FROM cat_usuarios where id not in(1)";
 
 	// include and create object
 	include("../../includes/libs/phpgridv1.5.2/lib/inc/jqgrid_dist.php");
@@ -40,7 +40,7 @@
                 );
 
 	// set database table for CRUD operations
-	$g->table = "cat_areas";
+	$g->table = "cat_usuarios";
 	$g->select_command = $sql;
 	// render grid
 	$out = $g->render("areas");

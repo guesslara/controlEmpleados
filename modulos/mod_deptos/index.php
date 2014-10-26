@@ -13,7 +13,7 @@
 	mysql_connect($configGral["bd"]["host"],$configGral["bd"]["usuario"],$configGral["bd"]["password"]);
 	mysql_select_db($configGral["bd"]["base"]);
 
-	$sql="SELECT id,descripcion,responsable,obs FROM cat_areas";
+	$sql="SELECT descripcion,responsable,obs FROM cat_areas";
 
 	// include and create object
 	include("../../includes/libs/phpgridv1.5.2/lib/inc/jqgrid_dist.php");

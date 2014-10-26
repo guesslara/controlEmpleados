@@ -23,5 +23,12 @@ body,document,html{margin:0;height: 100%;overflow: hidden;font-family: "Verdana"
 #datosUsuario{float:right;border:1px solid #CCC;width:200px;height:50px;margin:3px;font-size: 10px;text-align: left;}
 /*modulo empleados*/
 #barraHerramientasEmpleados{border:1px solid #CCC;padding:5px;background:#F0F0F0;}
-.btnHerramientasEmpleados{border:1px solid #FF0000;width:145px;height:35px;font-size: 10px;}
-.btnHerramientasEmpleados:hover{background: #CCC;cursor: pointer;};
+.btnHerramientasEmpleados{border:0px solid #CCC;width:145px;height:60px;font-size: 10px;padding: 5px;margin-top: -10px;text-decoration: none;color: #000;}
+.btnHerramientasEmpleados:hover{border:1px solid #CCC;background: #FFF;cursor: pointer;};
+/*usuarios*/
+.tabla{background: #FFF;}
+.tituloCampo{border:1px solid #CCC;background:#F0F0F0;height: 15px;padding: 5px;}
+.leyenda{font-size: 10px;text-align: right;}
+.botonesAgregaUsuario{text-align: right;}
+.tituloAddUsuarios{text-align:center;font-size:14px;font-weight:bold;height:15px;padding:10px;}
+.obligatorio{color: #FF0000;font-size: 12px;}
