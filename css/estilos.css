@@ -28,6 +28,7 @@ body,document,html{margin:0;height: 100%;overflow: hidden;font-family: "Verdana"
 /*usuarios*/
 .tabla{background: #FFF;}
 .tituloCampo{border:1px solid #CCC;background:#F0F0F0;height: 15px;padding: 5px;}
+.tituloCampo2{border-bottom:1px solid #CCC;height: 15px;padding: 5px;}
 .leyenda{font-size: 10px;text-align: right;}
 .botonesAgregaUsuario{text-align: right;}
 .tituloAddUsuarios{text-align:center;font-size:14px;font-weight:bold;height:15px;padding:10px;}
