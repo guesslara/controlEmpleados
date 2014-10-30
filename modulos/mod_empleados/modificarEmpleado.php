@@ -21,13 +21,15 @@ body{overflow: auto;font-size: 10px;}
 	<form name="frmBuscar" id="frmBuscar" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 		<table border="0" width="600" cellpading="1" cellspacing="1" style="background:#FFF;">
 			<tr>
-				<td width="150">Buscar empleado:</td>
-				<td width="150"><input type="text" name="txtBuscar" id="txtBuscar" /></td>
-				<td width="100">
+				<td width="100" align="right">Buscar empleado:</td>
+				<td width="200"><input type="text" name="txtBuscar" id="txtBuscar" style="width:350px;" /></td>
+				<td width="100"><input type="submit" value="Buscar"></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="3">
 					<input type="radio" name="filtro" id="noEmpleado" value="no_empleado" checked="checked" /><label for="noEmpleado">No Empleado</label>
 					<input type="radio" name="filtro" id="nombres" value="nombres" /><label for="nombres">Nombre</label>
 				</td>
-				<td width="100"><input type="submit" value="Buscar"></td>
 			</tr>
 		</table>
 	</form>
@@ -68,7 +70,7 @@ body{overflow: auto;font-size: 10px;}
 			while($rowBuscar=$obj->regresaResulatdos($resBuscar)){
 ?>
 				<tr>
-					<td class="tituloCampo2"><a href="#" title="Modificar Informaci&oacute;n">Editar</a></td>
+					<td class="tituloCampo2"><a href="modificaInfo.php?emp=<?php echo $rowBuscar["id"];?>" title="Modificar Informaci&oacute;n">Editar</a></td>
 					<td class="tituloCampo2"><?php echo $rowBuscar["no_empleado"];?></td>
 					<td class="tituloCampo2"><?php echo $rowBuscar["nombres"];?></td>
 					<td class="tituloCampo2"><?php echo $rowBuscar["a_paterno"];?></td>
