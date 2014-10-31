@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(!isset($_SESSION["id"])){
-		header("Location: ../mod_login/index.php");
+		echo "<script type='text/javascript'> parent.location.href='../mod_login/index.php'; </script>";
 		exit();
 	}
 	
@@ -26,11 +26,11 @@
 
 	$g->set_options($grid);
 	$g->set_actions(array(  
-                        "add"=>true,
-                        "edit"=>true,
+                        "add"=>false,
+                        "edit"=>false,
                         "delete"=>true,
                         "view"=>true,
-                        "rowactions"=>true,
+                        "rowactions"=>false,
                         "export"=>false,
                         "autofilter" => true,
                         "search" => "advance",
@@ -52,7 +52,11 @@
 <script src="../../includes/libs/phpgridv1.5.2/lib/js/jquery.min.js" type="text/javascript"></script>
 <script src="../../includes/libs/phpgridv1.5.2/lib/js/jqgrid/js/i18n/grid.locale-es.js" type="text/javascript"></script>
 <script src="../../includes/libs/phpgridv1.5.2/lib/js/jqgrid/js/jquery.jqGrid.min.js" type="text/javascript"></script>    
-<script src="../../includes/libs/phpgridv1.5.2/lib/js/themes/jquery-ui.custom.min.js" type="text/javascript"></script> 
+<script src="../../includes/libs/phpgridv1.5.2/lib/js/themes/jquery-ui.custom.min.js" type="text/javascript"></script>
+<div id="barraHerramientasEmpleados">
+	<a href="agregarUsuario.php" class="btnHerramientasEmpleados" title="Agregar usuario"><img src="../../img/facturacion.png" width="32" height="32" border="0" />Agregar usuario</a>
+	<a href="modificarEmpleado.php" class="btnHerramientasEmpleados" title="Modificar usuario"><img src="../../img/Edit_icon.png" width="32" height="32" border="0" />Modificar informaci&oacute;n</a>
+</div> 
 <div style="margin:10px;font-size:10px;">
     <?php echo $out?>
 </div>

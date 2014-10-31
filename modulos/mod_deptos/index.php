@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	if(!isset($_SESSION["id"])){
-		header("Location: ../mod_login/index.php");
+		echo "<script type='text/javascript'> parent.location.href='../mod_login/index.php'; </script>";
 		exit();
 	}
 	

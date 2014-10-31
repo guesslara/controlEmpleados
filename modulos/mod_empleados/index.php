@@ -57,7 +57,7 @@
 <script src="../../includes/libs/phpgridv1.5.2/lib/js/themes/jquery-ui.custom.min.js" type="text/javascript"></script> 
 <div id="barraHerramientasEmpleados">
 	<a href="agregarEmpleado.php" class="btnHerramientasEmpleados" title="Agregar empleado"><img src="../../img/facturacion.png" width="32" height="32" border="0" />Agregar empleado</a>
-	<a href="modificarEmpleado.php" class="btnHerramientasEmpleados" title="Agregar empleado"><img src="../../img/Edit_icon.png" width="32" height="32" border="0" />Modificar informaci&oacute;n</a>
+	<a href="modificarEmpleado.php" class="btnHerramientasEmpleados" title="Modificar informaci&oacute;n"><img src="../../img/Edit_icon.png" width="32" height="32" border="0" />Modificar informaci&oacute;n</a>
 </div>
 <div style="margin:10px;font-size:10px;">
     <?php echo $out?>

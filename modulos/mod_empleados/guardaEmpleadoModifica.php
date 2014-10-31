@@ -37,7 +37,7 @@
 	$txtcuenta=$_POST["txtcuenta"];
 	$obs=$_POST["obs"];
 	$txtIdEmpleado=$_POST["txtIdEmpleado"];
-
+//exit();
 	if($txtNoEmpleado=="" || $txtFechaIngreso=="" || $txtNombre=="" || $apellidoPaterno=="" || $apellidoMaterno=="" || $cboDepto=="" || $txtCargo=="" || $estadoCivil=="" || $rdbSexo=="" || $txtFechaNacimiento==""){
 		echo "<script type='text/javascript'> alert('Los campos marcados con * son obligatorios'); </script>";
 		echo "<script type='text/javascript'> history.back(); </script>";

@@ -154,7 +154,7 @@ body{overflow: auto;font-size: 10px;}
 				<td class="tituloCampo"><span class="obligatorio">*</span>Estado civil:</td>
 				<td>
 					<select name="estadoCivil" id="estadoCivil">
-						<option value="" selected="selected" value="<?=$rowEmp["estado_civil"];?>"><?=$rowEmp["estado_civil"];?></option>
+						<option selected="selected" value="<?=$rowEmp["estado_civil"];?>"><?=$rowEmp["estado_civil"];?>(a)</option>
 						<option value="Soltero">Soltero(a)</option>
 						<option value="Casado">Casado(a)</option>
 						<option value="Viudo">Viudo(a)</option>
