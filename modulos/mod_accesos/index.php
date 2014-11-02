@@ -13,7 +13,7 @@
 	mysql_connect($configGral["bd"]["host"],$configGral["bd"]["usuario"],$configGral["bd"]["password"]);
 	mysql_select_db($configGral["bd"]["base"]);
 
-	$sql="SELECT id,activo,usuario,nombre_completo,nivel_acceso,obs FROM cat_usuarios where id not in(1)";
+	$sql="SELECT reg_accesos.id AS id,nombres,a_paterno,a_materno,fecha,hora,IF(ES=1,'Entrada','Salida') AS ES FROM reg_accesos INNER JOIN cat_personal ON reg_accesos.id_empleado=cat_personal.id";
 
 	// include and create object
 	include("../../includes/libs/phpgridv1.5.2/lib/inc/jqgrid_dist.php");

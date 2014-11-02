@@ -23,5 +23,8 @@ function modulos(modulo){
 		case "empleados":
 			contenedorVentana.location.href="../mod_empleados/index.php"
 		break;
+		case "accesos":
+			contenedorVentana.location.href="../mod_accesos/index.php"
+		break;
 	}
 }

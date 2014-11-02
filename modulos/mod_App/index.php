@@ -17,7 +17,7 @@
 			<div class="imgHerramientas"><img src="../../img/recurso1.png" width="32" height="32" border="0" /></div>
 			Empleados
 		</div>
-		<div class="btnHerramientas" title="Reporte de Entradas / Salidas">
+		<div class="btnHerramientas" title="Reporte de Entradas / Salidas" onclick="modulos('accesos')">
 			<div class="imgHerramientas"><img src="../../img/ince.png" width="32" height="32" border="0" /></div>
 			Ent/Sal
 		</div>
