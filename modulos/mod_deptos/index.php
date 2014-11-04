@@ -10,8 +10,8 @@
 	include_once("../../includes/libs/phpgridv1.5.2/config.php");
 
 	// set up DB
-	mysql_connect($configGral["bd"]["host"],$configGral["bd"]["usuario"],$configGral["bd"]["password"]);
-	mysql_select_db($configGral["bd"]["base"]);
+	@mysql_connect($configGral["bd"]["host"],$configGral["bd"]["usuario"],$configGral["bd"]["password"]);
+	@mysql_select_db($configGral["bd"]["base"]);
 
 	$sql="SELECT descripcion,responsable,obs FROM cat_areas";
 
