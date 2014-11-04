@@ -12,8 +12,8 @@
 	include_once("../../includes/libs/phpgridv1.5.2/config.php");
 
 	// set up DB
-	mysql_connect($configGral["bd"]["host"],$configGral["bd"]["usuario"],$configGral["bd"]["password"]);
-	mysql_select_db($configGral["bd"]["base"]);
+	@mysql_connect($configGral["bd"]["host"],$configGral["bd"]["usuario"],$configGral["bd"]["password"]);
+	@mysql_select_db($configGral["bd"]["base"]);
 
 	$sql="SELECT cat_personal.id AS Identificador,no_empleado,nombres,a_paterno,a_materno,descripcion,tipo_nomina,fecha_ingreso FROM cat_personal INNER JOIN cat_areas ON cat_personal.id_area=cat_areas.id";
 
