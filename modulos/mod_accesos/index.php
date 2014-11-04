@@ -10,8 +10,8 @@
 	include_once("../../includes/libs/phpgridv1.5.2/config.php");
 
 	// set up DB
-	mysql_connect($configGral["bd"]["host"],$configGral["bd"]["usuario"],$configGral["bd"]["password"]);
-	mysql_select_db($configGral["bd"]["base"]);
+	@mysql_connect($configGral["bd"]["host"],$configGral["bd"]["usuario"],$configGral["bd"]["password"]);
+	@mysql_select_db($configGral["bd"]["base"]);
 
 	$sql="SELECT reg_accesos.id AS id,nombres,a_paterno,a_materno,fecha,hora,IF(ES=1,'Entrada','Salida') AS ES FROM reg_accesos INNER JOIN cat_personal ON reg_accesos.id_empleado=cat_personal.id";
 
