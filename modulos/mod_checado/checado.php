@@ -1,5 +1,7 @@
 <?php
 session_start();
+include "../../includes/config.inc-s.php";
+include "../../includes/libs/mysql.php";
 date_default_timezone_set("America/Monterrey");
 
 if(isset($_POST["ac"])){
@@ -8,14 +10,17 @@ if(isset($_POST["ac"])){
 	header("Content-Type: text/html; charset=ISO-8859-1");	
 	switch($a){
 		case "login":
-			include("../conf/conexion.php"); //  AND activo=1 
-			
-			mysql_select_db($db_actual);
+			//include("../conf/conexion.php"); //  AND activo=1 
+			$obj=new mysql($configGral["bd"]["host"],$configGral["bd"]["usuario"],$configGral["bd"]["password"],$configGral["bd"]["base"],$configGral["bd"]["puerto"]);
+			//mysql_select_db($db_actual);
 			$sql="SELECT id,no_empleado, nombres, a_paterno, a_materno, foto FROM cat_personal WHERE no_empleado='".$_POST["nde"]."' LIMIT 1; ";
-			if ($res=mysql_query($sql,$link)){ 
-				$ndr=mysql_num_rows($res);
+            $res=$obj->ejecutarQuery($sql);
+			if ($res){ 
+				//$ndr=mysql_num_rows($res);
+                $ndr=$obj->numeroRegistros($res);
 				if($ndr>0){	
-					while($reg=mysql_fetch_array($res)){
+					//while($reg=mysql_fetch_array($res)){
+                    while($reg=$obj->regresaResulatdos($res)){    
 						$id=$reg["id"];
 						$nde=$reg["no_empleado"];
 						$nombres=strtoupper($reg["nombres"]);
@@ -27,28 +32,33 @@ if(isset($_POST["ac"])){
 					?><script language="javascript"> limpiar_datos(); $('#spa_nombre_completo').text('EMPLEADO DESCONOCIDO'); </script><?php
 					exit; 
 				}
-			} else{ echo "<br>Error SQL (".mysql_error($link).")."; exit;	}	
+			} else{ echo "<br>Error "; exit;	}	
 			// Registrar acceso ...
 			$sql2="SELECT id,ES FROM reg_accesos WHERE id_empleado=$id ORDER BY id DESC LIMIT 1; ";
-			if ($res=mysql_query($sql2,$link)){ 
-				$ndr=mysql_num_rows($res);
+			$res=$obj->ejecutarQuery($sql2);
+            if ($res){ 
+				//$ndr=mysql_num_rows($res);
+                $ndr=$obj->numeroRegistros($res);
 				if($ndr>0){	
-					while($reg=mysql_fetch_array($res)){
+					//while($reg=mysql_fetch_array($res)){
+                    while($reg=$obj->regresaResulatdos($res)){
 						($reg["ES"]==1)?$tipo='SALIDA':$tipo='ENTRADA';
 					}
 				}else{ $tipo='ENTRADA'; }
-			} else{ echo "<br>Error SQL (".mysql_error($link).")."; exit;	}	
+			} else{ echo "<br>Error ."; exit;	}	
 			$nueva_fecha=date("Y-m-d");
 			$nueva_hora=date("H:i:s");
 			($tipo=='ENTRADA')?$nuevo_ES=1:$nuevo_ES=0;
 			$sql3="INSERT INTO reg_accesos (id,id_empleado,fecha,hora,ES) VALUES (NULL,'$id','$nueva_fecha','$nueva_hora','$nuevo_ES'); ";
-			if (!$res=mysql_query($sql3,$link)){ echo "<br>Error SQL (".mysql_error($link).")."; exit;	}
+            $res=$obj->ejecutarQuery($sql3);
+			//if (!$res=mysql_query($sql3,$link)){ echo "<br>Error SQL (".mysql_error($link).")."; exit;	}
+            if (!$res){ echo "<br>Error SQL (".mysql_error($link).")."; exit;  }
 				$nombreCompleto=$nombres." ".$ap." ".$am;				                                
-				$path="../fotos2/".$foto.".JPG";
+				$path="../../fotos/".$foto.".JPG";
 				if(file_exists($path)){
                                     $path=$path;
                                 }else{
-                                    $path="../fotos2/other_profile.png";
+                                    $path="../../fotos/other_profile.png";
                                 }
 				?><script language="javascript">                                        
 					$('#spa_nde').attr('value','<?=$nde?>');
@@ -142,11 +152,10 @@ function ajax(capa,datos,ocultar_capa){
 	});
 }
 function tecla(n,elEvento){
-	var evento = elEvento || window.event;
+	var evento = elEvento || window.event
 	var codigo = evento.charCode || evento.keyCode;
 	if (n==0&&codigo==13){ // Enter o Tabulacion...
-		var nde=$("#txt_nde").attr("value");		
-		
+		var nde=$("#txt_nde").val();		
 		if(nde==''||nde==undefined||nde==null){			
 			return;
 		}else if(nde==0){
@@ -421,12 +430,12 @@ body{height: 100%;position: absolute;width: 100%;margin: 0;font-family: Verdana,
 <div id="contenedorChecadorPrincipal">
     <div class="divContenedorChecado">
         <div id="contenedorTituloChecador">
-            <div style="float: left;">IQelectronics International S.A. de C.V.</div>
+            <div style="float: left;"><?php echo $configGral["login"]["title"];?></div>
             <div style="float: right;"><?php echo(clockDateString($gDate));?></div>
         </div>
         <div style="clear: both;"></div>        
         <div id="contenedorLogoImagen">
-            <div id="estiloDivContenedorImagen"><img src="../img/iq_128x96.jpg" style="margin:2px;" /></div>
+            <!--<div id="estiloDivContenedorImagen"><img src="../img/iq_128x96.jpg" style="margin:2px;" /></div>-->
             <div id="div_foto"></div>            
         </div>
         <div id="divDatosPersonal">
@@ -462,7 +471,7 @@ body{height: 100%;position: absolute;width: 100%;margin: 0;font-family: Verdana,
             </fieldset>
         </div>
         <div style="clear: both;"></div>
-        <div style="border-top: 1px solid #ff0000;border-bottom: 1px solid #ff0000;background: #F3F781;height: 25px;padding: 5px;color: #ff0000;"><blink><?=utf8_decode("¿Datos erroneos o no aparece tu foto?  Notificalo a Capital Humano (Recursos Humanos).");?></blink></div>
+        <!--<div style="border-top: 1px solid #ff0000;border-bottom: 1px solid #ff0000;background: #F3F781;height: 25px;padding: 5px;color: #ff0000;"></div>-->
         <div id="ClockTime" style="border: 0px solid #000;position: absolute; left: 560px; top: 425px;width: 250px; height: 20px; z-index: 11; cursor: pointer;font-size:34px;"  onclick="clockToggleSeconds()">
             <p style="font-size: 20px;font-weight: bold;"><?php echo(clockTimeString($gDate,$gClockShowsSeconds));?></p>
 	</div>
