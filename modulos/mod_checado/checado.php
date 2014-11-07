@@ -51,10 +51,9 @@ if(isset($_POST["ac"])){
 			($tipo=='ENTRADA')?$nuevo_ES=1:$nuevo_ES=0;
 			$sql3="INSERT INTO reg_accesos (id,id_empleado,fecha,hora,ES) VALUES (NULL,'$id','$nueva_fecha','$nueva_hora','$nuevo_ES'); ";
             $res=$obj->ejecutarQuery($sql3);
-			//if (!$res=mysql_query($sql3,$link)){ echo "<br>Error SQL (".mysql_error($link).")."; exit;	}
             if (!$res){ echo "<br>Error SQL (".mysql_error($link).")."; exit;  }
 				$nombreCompleto=$nombres." ".$ap." ".$am;				                                
-				$path="../../fotos/".$foto.".JPG";
+				$path="../../fotos/".$foto.".jpg";
 				if(file_exists($path)){
                                     $path=$path;
                                 }else{
@@ -69,7 +68,7 @@ if(isset($_POST["ac"])){
 					$('#txt_ES').attr('value','<?=$tipo?>');
 					$('#txt_fecha').attr('value','<?=$nueva_fecha?>');
 					$('#txt_hora').attr('value','<?=$nueva_hora?>');
-					$("#txt_nde").attr('value','');
+					$("#txt_nde").val("");
 					$("#txt_nde").focus();
 				</script><?php
 			break;
