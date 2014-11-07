@@ -55,7 +55,7 @@
 <script src="../../includes/libs/phpgridv1.5.2/lib/js/themes/jquery-ui.custom.min.js" type="text/javascript"></script>
 <div id="barraHerramientasEmpleados">
 	<a href="plantillaReporte.php" class="btnHerramientasEmpleados" title="Agregar usuario"><img src="../../img/Excel-icon.png" width="32" height="32" border="0" />Exportar Reporte de Entradas</a>
-	<a href="formContrasenia.php" class="btnHerramientasEmpleados" title="Modificar Contrase&ntilde;as"><img src="../../img/checador.gif" width="32" height="32" border="0" />Entradas / Salidas</a>
+	<a href="../mod_checado/checado.php" target="_blank" class="btnHerramientasEmpleados" title="Checador"><img src="../../img/checador.gif" width="32" height="32" border="0" />Entradas / Salidas</a>
 </div> 
 <div style="margin:10px;font-size:10px;">
     <?php echo $out?>

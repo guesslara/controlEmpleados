@@ -126,7 +126,7 @@ function clockTimeString($inDate, $showSeconds) {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <script type="text/javascript" src="../../includes/libs/jquery.js"></script>
-<title>Sistema de Acceso de Personal</title>
+<title>Acceso de Personal</title>
 <script type="text/javascript">
     $("document").ready(function(){ 
 	limpiar_datos();	
