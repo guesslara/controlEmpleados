@@ -15,6 +15,10 @@
 body{overflow: auto;font-size: 10px;}
 </style>
 <body>
+<div id="barraHerramientasEmpleados">
+	<a href="index.php" class="btnHerramientasEmpleados" title="Listado de Usuarios"><img src="../../img/Report-32.png" width="32" height="32" border="0" />Listado de usuarios</a>
+	<a href="formContrasenia.php" class="btnHerramientasEmpleados" title="Modificar Contrase&ntilde;as"><img src="../../img/Edit_icon.png" width="32" height="32" border="0" />Modificar Contrase&ntilde;as</a>
+</div>
 	<form name="frmAgrega" id="frmAgrega" method="post" action="guardaUsuario.php">
 		<table border="0" align="center" cellpading="1" cellspacing="0" width="800" style="background:#FFF;margin-top:10px;">
 			<tr>

@@ -69,6 +69,11 @@
 body{overflow: auto;font-size: 10px;}
 </style>
 <body>
+<div id="barraHerramientasEmpleados">
+	<a href="index.php" class="btnHerramientasEmpleados" title="Listado de Empleados"><img src="../../img/Report-32.png" width="32" height="32" border="0" />Listado de empleados</a>
+	<a href="agregarEmpleado.php" class="btnHerramientasEmpleados" title="Agregar empleado"><img src="../../img/facturacion.png" width="32" height="32" border="0" />Agregar empleado</a>
+	<a href="modificarEmpleado.php" class="btnHerramientasEmpleados" title="Modificar informaci&oacute;n"><img src="../../img/Edit_icon.png" width="32" height="32" border="0" />Modificar informaci&oacute;n</a>
+</div>
 	<form name="frmAgrega" id="frmAgrega" method="post" action="guardaEmpleado.php">
 		<table border="0" align="center" cellpading="1" cellspacing="0" width="800" style="background:#FFF;margin-top:10px;">
 			<tr>

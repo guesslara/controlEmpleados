@@ -17,6 +17,10 @@
 body{overflow: auto;font-size: 10px;}
 </style>
 <body>
+<div id="barraHerramientasEmpleados">
+	<a href="index.php" class="btnHerramientasEmpleados" title="Listado de Empleados"><img src="../../img/Report-32.png" width="32" height="32" border="0" />Listado de empleados</a>
+	<a href="agregarEmpleado.php" class="btnHerramientasEmpleados" title="Agregar empleado"><img src="../../img/facturacion.png" width="32" height="32" border="0" />Agregar empleado</a>
+</div>
 <div style="margin:10px;">
 	<form name="frmBuscar" id="frmBuscar" method="post" action="<?php echo $_SERVER["PHP_SELF"];?>">
 		<table border="0" width="600" cellpading="1" cellspacing="1" style="background:#FFF;">

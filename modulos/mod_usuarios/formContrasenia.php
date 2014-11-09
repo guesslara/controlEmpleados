@@ -12,6 +12,10 @@
 body{overflow: auto;font-size: 10px;}
 </style>
 <body>
+<div id="barraHerramientasEmpleados">
+	<a href="index.php" class="btnHerramientasEmpleados" title="Listado de Usuarios"><img src="../../img/Report-32.png" width="32" height="32" border="0" />Listado de usuarios</a>
+	<a href="agregarUsuario.php" class="btnHerramientasEmpleados" title="Agregar usuario"><img src="../../img/facturacion.png" width="32" height="32" border="0" />Agregar usuario</a>
+</div>
 <div style="margin:10px;">
 <?php
 		$txtBuscar=$_POST["txtBuscar"];
